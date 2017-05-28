@@ -30,10 +30,10 @@ React.render(
 
 <strong> Classic (no React or Browserify): </strong>
 
-Download [react-pivot-standalone-1.14.0.min.js](https://raw.githubusercontent.com/davidguttman/react-pivot/master/dist/react-pivot-standalone-1.14.0.min.js)
+Download [react-pivot-standalone-2.0.0.min.js](https://raw.githubusercontent.com/davidguttman/react-pivot/master/dist/react-pivot-standalone-2.0.0.min.js)
 
 ```html
-<script src='react-pivot-standalone-1.14.0.min.js'></script>
+<script src='react-pivot-standalone-2.0.0.min.js'></script>
 <script>
   ReactPivot(document.body, {
     rows: rows,
@@ -74,7 +74,7 @@ React.render(
 )
 ```
 
-`ReactPivot` takes four arguments: `rows`, `dimensions`, `reduce` and `calculations`
+`ReactPivot` requires four arguments: `rows`, `dimensions`, `reduce` and `calculations`
 
 `rows` is your data, just an array of objects:
 ```js
@@ -131,6 +131,20 @@ React.render(
 
 See it all together in [example/basic.jsx](https://github.com/davidguttman/react-pivot/blob/master/example/basic.jsx)
 
+### Optional Arguments ###
+parameter | type | description | default
+--------- | ---- | ----------- | -------
+compact | boolean | compact rows | false
+csvDownloadFileName | string | assign name of document created when user clicks to 'Export CSV' | 'table.csv'
+csvTemplateFormat | boolean | apply template formatting to data before csv export | false
+defaultStyles | boolean | apply default styles from style.css | true
+hiddenColumns | array | columns that should not display | []
+nPaginateRows | number | items per page setting | 25
+solo | object | item that should be displayed solo | null
+sortBy | string | name of column to use for record sort | null
+sortDir | string | sort direction, either 'asc' or 'desc' | 'asc'
+tableClassName | string | assign css class to table containing react-pivot elements | ''
+hideDimensionFilter | boolean | do not render the dimension filter | false
 
 ### TODO ###
 
